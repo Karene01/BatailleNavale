@@ -1,5 +1,6 @@
 public class Test {
     public static void main(String[] args) {
+        
         // Test de la classe Configuration
         System.out.println("===== TEST CONFIGURATION =====");
         // Afficher le nombre de bateaux
@@ -20,5 +21,19 @@ public class Test {
         } catch (Exception e) {
             System.out.println("Erreur : " + e.getMessage());
         }
+
+        // Test de la classe
+        System.out.println("===== TEST MENU =====");
+        // Création d'une instance de Menu
+        Menu menu = new Menu();
+        
+        //Afficher les choix et dmenader au joueur d'en faire un
+        menu.choixJoueur(); 
+
+         // Appel de la méthode pour nettoyer la console
+         menu.nettoyerConsole();
+
+         // Affichage après nettoyage
+         System.out.println("Console nettoyée.");
     }
 }
