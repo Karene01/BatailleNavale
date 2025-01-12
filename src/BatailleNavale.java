@@ -1,4 +1,3 @@
-
 public class BatailleNavale {
     public static void main(String[] args) {
         // Création et lancement du menu

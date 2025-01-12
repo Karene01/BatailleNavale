@@ -71,15 +71,6 @@ public class Menu {
         System.exit(0);
     }
 
-    // Méthode pour jouer une partie
-    public void jouerPartie() {
-        System.out.println("Lancement d'une nouvelle partie...");
-        // Initialisation des joueurs
-       /* Joueur joueur1 = new Humain("Joueur 1");
-        Joueur joueur2 = new Ordinateur();
-        Partie partie = new Partie(joueur1, joueur2);
-        partie.demarrer();*/ 
-    }
 
     // Méthode pour nettoyer la console
     public void nettoyerConsole() {
@@ -87,6 +78,17 @@ public class Menu {
             new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
         } catch (final Exception e) {
             System.out.println("Erreur lors du nettoyage de la console : " + e.getMessage());
+        }
+    }
+
+    public void jouerPartie() {
+        System.out.println("Lancement d'une nouvelle partie...");
+        try {
+            Partie partie = new Partie();
+            partie.initPartie();
+            partie.jouerPartie();
+        } catch (java.io.IOException e) {
+            System.out.println("Une erreur est survenue lors de la partie : " + e.getMessage());
         }
     }
 }
