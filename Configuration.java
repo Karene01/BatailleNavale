@@ -8,14 +8,14 @@ public abstract class Configuration {
         {"2", "Cuirasse", "4"},
         {"3", "Croiseur", "3"},
         {"4", "Croiseur", "3"},
-        {"5", "Torpimmeur", "2"}
+        {"5", "Torpilleur", "2"} // Correction de l'orthographe
     };
 
-     // Taille de la grille
-     private static final int TAILLE_GRILLE = 10;
+    // Taille de la grille
+    private static final int TAILLE_GRILLE = 10;
 
-     // Méthode pour obtenir toutes les spécifications des bateaux
-     public static String[][] getBateaux() {
+    // Méthode pour obtenir toutes les spécifications des bateaux
+    public static String[][] getBateaux() {
         return bateaux;
     }
 
@@ -27,13 +27,21 @@ public abstract class Configuration {
         return bateaux[indice]; 
     }
 
-    //Méthode pour afficher les spécifications d'un bateau en utilisant getBateaux()
+    // Méthode pour afficher les spécifications d'un bateau en utilisant getBateaux()
     public static void afficherBateau(int indice) {
         System.out.println("Bateau " + indice + " : " + Arrays.toString(getBateau(indice)));
     }
-    
-     // Méthode pour connaître le nombre de bateaux
-     public static int getNombreBateaux() {
+
+    // Méthode pour afficher la description complète de tous les bateaux
+    public static void afficherTousBateaux() {
+        System.out.println("\n=== Liste des Bateaux ===");
+        for (int i = 0; i < bateaux.length; i++) {
+            System.out.println("Bateau " + (i + 1) + " : " + Arrays.toString(bateaux[i]));
+        }
+    }
+
+    // Méthode pour connaître le nombre de bateaux
+    public static int getNombreBateaux() {
         return bateaux.length;
     }
 
